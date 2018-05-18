@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css?family=Lato');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lato', sans-serif !important;
+}
+
+body {
+    font-size: 14px;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    height: 100vh;
+}
+
+header {
+    display: flex;
+    flex-flow: column;
+    width: 50%;
+    margin: 0 auto;
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+a, a:link, a:active, a:visited, a:focus {
+    text-decoration: none;
+    color: inherit;
+}
+
+h1 {
+    font-size: 3rem;
+    color: hsl(0,0%,10%);
+}
+
+h2 {
+    margin-top: .5rem;
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: hsl(0,0%,10%);
+}
+
+main {
+    margin-top: 1.5rem;
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    width: 100%;
+}
+
+main .icon:not(:first-child) {
+    margin-left: 1rem;
+}
+
+main .icon:not(:last-child) {
+    margin-right: 1rem;
+}
+
+.icon {
+    padding: 1.5rem 1.5rem;
+    border-radius: 50% 50%;
+    background-color: hsl(0,0%,85%);
+    color: hsl(0,0%,15%);
+    transition: all 100ms ease-in-out;
+}
+
+.icon:hover {
+    background-color: hsl(0,0%,15%);
+    color: hsl(0,0%,85%);
+}
+
+.icon-svg {
+    width: 2rem;
+    height: 2rem;
+}
