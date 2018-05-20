@@ -68,7 +68,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // r >= 75% && r <= 100%
             else if (this.r >= MAX_RADIUS * 0.75 && this.r <= MAX_RADIUS) {
-                this.a = (((MAX_RADIUS + MAX_RADIUS * 0.25) - this.r) / (MAX_RADIUS * 0.75));
+                this.a = (MAX_RADIUS - this.r) / (MAX_RADIUS * 0.25);
             }
 
             // r > 100%
