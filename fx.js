@@ -1,8 +1,13 @@
+// Modes
+const MODE_CIRCLE = 1;
+const MODE_SQUARE = 2;
+
 // Constants
 const MAX_RADIUS = 32;
 const PAD_RADIUS = MAX_RADIUS * 2;
 const MAX_SPEED = 0.25;
 const NUM_BLOBS = 25;
+const MODE = MODE_CIRCLE;
 
 // Rectanglular intersection detection
 const intersects = (l1, r1, t1, b1, l2, r2, t2, b2) => r1 >= l2 && l1 <= r2 && b1 >= t2 && t1 <= b2;
@@ -11,17 +16,14 @@ const intersects = (l1, r1, t1, b1, l2, r2, t2, b2) => r1 >= l2 && l1 <= r2 && b
 document.addEventListener('DOMContentLoaded', () => {
 
     // Declare variables
-    let width, height, time, blobs;
+    let width, height, time, blobs, exclusionZone;
 
     // Grab canvas and context
     const canvas = document.querySelector('#canvas');
     const ctx = canvas.getContext('2d');
 
-    // Grab wrapper bounds
-    const wrapperBounds = document.querySelector('.wrapper').getBoundingClientRect();
-
-    // Circle class
-    class Circle {
+    // Thingy class
+    class Thingy {
         constructor() {
             this.reinitialize();
         }
@@ -39,10 +41,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 this.x + PAD_RADIUS,
                 this.y - PAD_RADIUS,
                 this.y + PAD_RADIUS,
-                wrapperBounds.left,
-                wrapperBounds.right,
-                wrapperBounds.top,
-                wrapperBounds.bottom
+                exclusionZone.left,
+                exclusionZone.right,
+                exclusionZone.top,
+                exclusionZone.bottom
             )) {
                 this.x = (Math.random() * width) | 0;
                 this.y = (Math.random() * height) | 0;
@@ -79,13 +81,22 @@ document.addEventListener('DOMContentLoaded', () => {
         render() {
             ctx.strokeStyle = `hsla(${this.c},25%,75%,${this.a})`;
             ctx.beginPath();
-            ctx.arc(
-                this.x, // x
-                this.y, // y
-                this.r, // r
-                0, // sAngle
-                2 * Math.PI, // eAngle
-            );
+            if (MODE === MODE_CIRCLE) {
+                ctx.arc(
+                    this.x, // x
+                    this.y, // y
+                    this.r, // r
+                    0, // sAngle
+                    2 * Math.PI, // eAngle
+                );
+            } else if (MODE === MODE_SQUARE) {
+                ctx.rect(
+                    this.x, // x
+                    this.y, // y
+                    this.r, // w
+                    this.r // h
+                );
+            }
             ctx.stroke();
         }
     }
@@ -118,6 +129,7 @@ document.addEventListener('DOMContentLoaded', () => {
             canvas.height = window.innerHeight;
             width = canvas.scrollWidth;
             height = canvas.scrollHeight;
+            exclusionZone = document.querySelector('.wrapper').getBoundingClientRect();
         }
 
         // Fit canvas and refit on resize
@@ -125,7 +137,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Initialize variables
         time = Date.now();
-        blobs = Array.from({length: NUM_BLOBS}).map(_ => new Circle());
+        blobs = Array.from({length: NUM_BLOBS}).map(_ => new Thingy());
 
         // Success
         return true;
