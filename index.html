@@ -11,8 +11,6 @@
     <link href="style.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
     <!-- Scripts -->
-    <script async src="subtle.js"></script>
-    <script async src="https://unpkg.com/feather-icons/dist/feather.min.js"></script>
     <script>
         function pageReady() {
             feather.replace({class: 'icon-svg'});
@@ -21,12 +19,10 @@
                 exclude: '.wrapper',
             });
         }
-        if (document.readyState === "interactive" || document.readyState === "complete") {
-            pageReady();
-        } else {
-            document.addEventListener('DOMContentLoaded', pageReady);
-        }
+        document.addEventListener('load', pageReady);
     </script>
+    <script async src="subtle.js"></script>
+    <script async src="https://unpkg.com/feather-icons/dist/feather.min.js"></script>
 </head>
 <body>
     <div class="wrapper">
