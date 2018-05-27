@@ -7,6 +7,21 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <!-- SEO -->
     <title>Marco Quinten</title>
+     <!-- Scripts -->
+     <script>
+            function pageReady() {
+                // Load Feather icons
+                feather.replace({class: 'icon-svg'});
+                // Mount Subtle effect
+                Subtle.mount({
+                    mode: Subtle.mode.circle,
+                    exclude: '.wrapper',
+                });
+            }
+            window.addEventListener('load', pageReady);
+        </script>
+        <script async src="https://unpkg.com/feather-icons/dist/feather.min.js"></script>
+        <script async src="subtle.js"></script>
     <!-- Styles -->
     <style>
         /* General */
@@ -140,24 +155,7 @@
             }
         }
     </style>
-    <!-- Scripts -->
-    <script>
-        function pageReady() {
-            // Load Lato font
-            WebFont.load({google: {families: ['Lato']}});
-            // Load Feather icons
-            feather.replace({class: 'icon-svg'});
-            // Mount Subtle effect
-            Subtle.mount({
-                mode: Subtle.mode.circle,
-                exclude: '.wrapper',
-            });
-        }
-        window.addEventListener('load', pageReady);
-    </script>
-    <script async src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
-    <script async src="subtle.js"></script>
-    <script async src="https://unpkg.com/feather-icons/dist/feather.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
 </head>
 <body>
     <div class="wrapper">
