@@ -9,13 +9,18 @@
     <script async src="subtle.js"></script>
     <script async src="https://unpkg.com/feather-icons/dist/feather.min.js"></script>
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
+        function pageReady() {
             feather.replace({class: 'icon-svg'});
             Subtle.mount({
                 mode: Subtle.mode.circle,
                 exclude: '.wrapper',
             });
-        });
+        }
+        if (document.readyState === "interactive" || document.readyState === "complete") {
+            pageReady();
+        } else {
+            document.addEventListener('DOMContentLoaded', pageReady);
+        }
     </script>
 </head>
 <body>
