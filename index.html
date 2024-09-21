@@ -1,170 +1,171 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html you dumb fuck>
+<html lang="de">
 <head>
-    <!-- HTML5 -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <!-- SEO -->
-    <title>Marco Quinten</title>
-    <meta name="Description" content="Are you looking for a Full Stack Developer with many years of experience? Take a look at my Open Source Software on GitHub!"
-     <!-- Scripts -->
-     <script>
-            function pageReady() {
-                // Load Feather icons
-                feather.replace({class: 'icon-svg', 'stroke-width': 1});
-                // Mount Subtle effect
-                Subtle.mount({
-                    mode: Subtle.mode.square,
-                    exclude: '.wrapper',
-                });
-            }
-            window.addEventListener('load', pageReady);
-        </script>
-        <script async src="https://unpkg.com/feather-icons@4.7.3/dist/feather.min.js"></script>
-        <script async src="subtle.js"></script>
-    <!-- Styles -->
+    <title>Kinner, Fiff und Pinner</title>
     <style>
-        /* General */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: "Lato", sans-serif !important;
-        }
         body {
-            background-color: white;
-            font-size: 14px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            margin: 0;
             height: 100vh;
-        }
-        .wrapper {
-            background-color: white;
             display: flex;
-            flex-flow: column;
             justify-content: center;
-            border-radius: 100rem 100rem;
-        }
-        header {
-            display: flex;
-            flex-flow: column;
-            margin: 0 auto;
-            text-align: center;
-            margin-bottom: 1.5rem;
-        }
-        a,
-        a:link,
-        a:active,
-        a:visited,
-        a:focus {
-            text-decoration: none;
-            color: inherit;
-        }
-        h1 {
-            color: hsl(0, 0%, 10%);
-        }
-        h2 {
-            margin-top: 0.5rem;
-            font-weight: 400;
-            color: hsl(0, 0%, 10%);
-        }
-        main {
-            margin-top: 1.5rem;
-            display: flex;
-            flex-flow: row;
-            justify-content: center;
-        }
-        .icon {
-            display: flex;
-            flex-flow: row;
-            justify-content: center;
-            align-content: center;
             align-items: center;
+            background-color: #000;
+            overflow: hidden;
         }
-        .icon .icon-svg {
-            color: hsl(0, 0%, 15%);
-            transition: all 100ms ease-in-out;
+
+        .container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
         }
-        .icon:hover .icon-svg, .icon:focus .icon-svg {
-            color: hsl(0, 0%, 50%);
+
+        .image {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 300px; /* Erhöhte Bildgröße */
+            height: 300px; /* Erhöhte Bildgröße */
+            object-fit: contain; /* Stellt sicher, dass das Bild proportional bleibt */
         }
-        /* Responsive */
-        .wrapper {
-            width: 90vw;
-            height: 90vh;
+
+        #kinner {
+            left: -300px; /* Erhöhung passend zur neuen Bildgröße */
         }
-        h1 {
-            font-size: 2.5rem;
+
+        #fiff {
+            right: -300px; /* Erhöhung passend zur neuen Bildgröße */
         }
-        h2 {
-            font-size: 1.5rem;
+
+        #pinner {
+            left: -300px;
+            display: none;
         }
-        .icon {
-            padding: 0.75rem 0.75rem;
-        }
-        .icon-svg {
-            width: 1.75rem;
-            height: 1.75rem;
-        }
-        main .icon:not(:first-child) {
-            margin-left: 0.5rem;
-        }
-        main .icon:not(:last-child) {
-            margin-right: 0.5rem;
-        }
-        @media only screen and (min-width: 700px) {
-            .wrapper {
-                width: 50vw;
-            }
-            h1 {
-                font-size: 3rem;
-            }
-            .icon {
-                padding: 1.5rem 1.5rem;
-            }
-            .icon-svg {
-                width: 2rem;
-                height: 2rem;
-            }
-            main .icon:not(:first-child) {
-                margin-left: 1rem;
-            }
-            main .icon:not(:last-child) {
-                margin-right: 1rem;
-            }
-        }
-        @media only screen and (min-width: 1000px) {
-            .wrapper {
-                width: 33vw;
-            }
-        }
-        @media only screen and (min-height: 450px) {
-            .wrapper {
-                height: 50vh;
-            }
-        }
-        @media only screen and (min-height: 700px) {
-            .wrapper {
-                height: 33vh;
-            }
+
+        canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 0;
         }
     </style>
-    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
 </head>
 <body>
-    <div class="wrapper">
-        <header>
-            <h1>Marco Quinten</h1>
-            <h2>Full Stack Software Engineer</h2>
-        </header>
-        <main>
-            <a tabindex="1" class="icon" target="_blank" rel="noopener" aria-label="GitHub" href="https://github.com/splittydev"><i data-feather="github"></i></a>
-            <a tabindex="2" class="icon" target="_blank" rel="noopener" aria-label="GitLab" href="https://gitlab.com/splittydev"><i data-feather="gitlab"></i></a>
-            <a tabindex="3" class="icon" target="_blank" aria-label="Email" href="mailto:splittydev@gmail.com"><i data-feather="mail"></i></a>
-            <a tabindex="4" class="icon" target="_blank" rel="noopener" aria-label="LinkedIn" href="https://www.linkedin.com/in/marcoquinten"><i data-feather="linkedin"></i></a>
-        </main>
+
+    <canvas id="background"></canvas>
+
+    <div class="container">
+        <img src="kinner.png" id="kinner" class="image">
+        <img src="fiff.png" id="fiff" class="image">
+        <img src="pinner.png" id="pinner" class="image">
     </div>
+
+    <script>
+        const canvas = document.getElementById('background');
+        const ctx = canvas.getContext('2d');
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        let lines = [];
+
+        function random(min, max) {
+            return Math.random() * (max - min) + min;
+        }
+
+        function createLines() {
+            for (let i = 0; i < 100; i++) {
+                lines.push({
+                    x1: random(0, canvas.width),
+                    y1: random(0, canvas.height),
+                    x2: random(0, canvas.width),
+                    y2: random(0, canvas.height),
+                    speedX1: random(-1337, 1337),
+                    speedY1: random(-1337, 1337),
+                    speedX2: random(-1337, 1337),
+                    speedY2: random(-1337, 1337 )
+                });
+            }
+        }
+
+        function drawLines() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.strokeStyle = 'rgba(255, 255, 255, 0.5)';
+            ctx.lineWidth = 1;
+
+    for (let i = 0; i < lines.length; i++) {
+	let line = lines[i];
+
+	ctx.beginPath();
+	ctx.moveTo(line.x1, line.y1);
+	ctx.lineTo(line.x2, line.y2);
+	ctx.stroke();
+
+	line.x1 += line.speedX1;
+	line.y1 += line.speedY1;
+	line.x2 += line.speedX2;
+	line.y2 += line.speedY2;
+
+	if (line.x1 > canvas.width || line.x1 < 0) line.speedX1 *= -1;
+                if (line.y1 > canvas.height || line.y1 < 0) line.speedY1 *= -1;
+                if (line.x2 > canvas.width || line.x2 < 0) line.speedX2 *= -1;
+                if (line.y2 > canvas.height || line.y2 < 0) line.speedY2 *= -1;
+            }
+
+            requestAnimationFrame(drawLines);
+        }
+
+        createLines();
+        drawLines();
+
+        function moveImage(image, direction, speed) {
+            let position = direction === "right" ? -300 : window.innerWidth; // Anpassung der Position
+
+            function animate() {
+                position += direction === "right" ? speed : -speed;
+
+                if (direction === "right") {
+                    if (position > window.innerWidth) {
+                        position = -300; // Anpassung der Position
+                    }
+                } else {
+                    if (position < -300) {
+                        position = window.innerWidth;
+                    }
+                }
+
+                image.style.left = direction === "right" ? position + "px" : null;
+                image.style.right = direction === "left" ? position + "px" : null;
+
+                requestAnimationFrame(animate);
+            }
+
+            animate();
+        }
+
+        const kinner = document.getElementById("kinner");
+        const fiff = document.getElementById("fiff");
+        const pinner = document.getElementById("pinner");
+
+        let kinnerSpeed = 1;
+        let fiffSpeed = 3;
+        let pinnerSpeed = 2; 
+
+        moveImage(kinner, "right", kinnerSpeed);
+        moveImage(fiff, "left", fiffSpeed);
+
+        setTimeout(() => {
+            pinner.style.display = "block";
+            moveImage(pinner, "right", pinnerSpeed);
+        }, 10000);
+
+        window.addEventListener('resize', () => {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        });
+    </script>
+
 </body>
 </html>
+
